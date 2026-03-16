@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio de Samuel M. Pedroso, desenvolvedor backend com experiência em C#, SQLServer, Oracle e mais.">
+    <title>Samuel M. Pedroso | Desenvolvedor FullStack</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- <header class="container-fluid main-box" id="home"> -->
+    <header id="home">    
+        <!-- <nav class="navbar navbar-expand-lg navbar-light"> -->
+        <nav>    
+            <a class="navbar-brand" href="#">Portfó<span>lio</span></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Sobre Mim</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#project">Projetos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contatos</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="text-center">
+        <div class="my-name">
+            <h1>Samuel <span>M. Pedroso</span></h1>
+            <h3>Programador <span>FullStack</span></h3>
+        </div>
+    </div>
+    
+    <section class="about-me" id="about">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <img src="./Imagens/Eu.png" class="img-fluid" alt="Foto de Samuel Maria Pedroso, desenvolvedor backend">
+            </div>
+            <div class="col-md-6">
+                <h2>Sobre Mim</h2>
+                <p>Atuando na area de desenvolvimento desde 2018, atualmente trabalhando com C# no desenvolvimento, melhorias e suporte de APIs. Tenho conhecimento em SQLServer, Oracle, C#, Javascript. Entusiasta em Linux e Python, com alguns projetos pendentes a fazer.</p>
+                <p>Atualmente aprofundando meus conhecimentos em C# e Javascript e em SQL em geral.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="project" id="project">
+        <h2>Projetos</h2>
+    
+        <div id="carouselProjects" class="carousel slide" data-ride="carousel" aria-labelledby="project">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="card">
+                        <img src="./Imagens/netflix.png" class="card-img-top" alt="Projeto Clone Netflix">
+                        <div class="card-body">
+                            <h5 class="card-title">Clone Netflix</h5>
+                            <p class="card-text">Clone da Netflix feito na faculdade para estudos de programação WEB.</p>
+                            <a href="https://github.com/SamuelMPedroso/CloneNetflix" class="btn btn-primary" target="_blank">Ver Projeto</a>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="carousel-item">
+                    <div class="card">
+                        <img src="./Imagens/despesas.png" class="card-img-top" alt="Projeto Calculadora C#">
+                        <div class="card-body">
+                            <h5 class="card-title">Calculadora</h5>
+                            <p class="card-text">Calculadora em C# para prática de lógica e Forms, baseada na calculadora do Windows.</p>
+                            <a href="https://github.com/SamuelMPedroso/CalculadoraCSharp" class="btn btn-primary" target="_blank">Ver Projeto</a>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="carousel-item">
+                    <div class="card">
+                        <img src="./Imagens/clima.png" class="card-img-top" alt="Projeto Site Meteorologia">
+                        <div class="card-body">
+                            <h5 class="card-title">Site Meteorologia</h5>
+                            <p class="card-text">Busca informações do clima de uma API do Google para alimentar as informações da página.</p>
+                            <a href="https://github.com/SamuelMPedroso/MetosSite" class="btn btn-primary" target="_blank">Ver Projeto</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Controles do carrossel -->
+            <a class="carousel-control-prev" href="#carouselProjects" role="button" data-slide="prev" aria-label="Projeto Anterior">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselProjects" role="button" data-slide="next" aria-label="Próximo Projeto">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Próximo</span>
+            </a>
+        </div>
+    </section>
+    
+    <footer id="contact">
+        <div class="container text-center">
+            <h5>Samuel Maria Pedroso</h5>
+            <p>Para mais informações:</p>
+
+            <ul class="social">
+                <li><a href="https://www.linkedin.com/in/samuel-maria-pedroso-3a5bb6192/" target="_blank" aria-label="LinkedIn"><img src="./Imagens/linkedin.png" alt="LinkedIn"></a></li>
+                <li><a href="https://github.com/SamuelMPedroso" target="_blank" aria-label="GitHub"><img src="./Imagens/github.png" alt="GitHub"></a></li>
+                <li><a href="https://github.com/SamuelMPedroso" target="_blank" aria-label="WhatsApp"><img src="./Imagens/whatsapp.png" alt="WhatsApp"></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+</body>
+</html>

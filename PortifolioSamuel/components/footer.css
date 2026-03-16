@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Variáveis de cores */
+:root {
+    --main-bg-color: #382933;
+    --secondary-bg-color: #3B5249;
+    --accent-color: #A4B494;
+    --highlight-color: #519872;
+    --text-color: #ffffff;
+    --text-muted-color: #e2b9c6;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.main-box {
+    height: 100vh;
+    background-color: var(--main-bg-color);
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+}
+
+.navbar-brand {
+    color: var(--text-color);
+    font-size: 40px;
+}
+
+.navbar-brand span {
+    color: var(--accent-color);
+}
+
+.nav-item .nav-link {
+    font-size: 20px;
+    color: var(--text-color);
+}
+
+.nav-item .nav-link:hover {
+    color: var(--accent-color);
+    transition: color 0.5s;
+}
+
+.my-name {
+    position: absolute;
+    top: 35%;
+    left: 7%;
+}
+
+.my-name h1 {
+    color: var(--text-color);
+    font-size: 55px;
+}
+
+.my-name h1 span {
+    color: var(--accent-color);
+}
+
+.my-name h3 {
+    color: var(--text-color);
+    font-size: 35px;
+    font-weight: lighter;
+}
+
+.my-name h3 span {
+    color: var(--accent-color);
+}
+
+.about-me {
+    background-color: var(--secondary-bg-color);
+    padding: 50px;
+    border-radius: 8px;
+    display: flex;
+}
+
+.about-me h2 {
+    color: var(--highlight-color);
+}
+
+.about-me p {
+    color: var(--text-color);
+}
+
+.project {
+    background-color: var(--secondary-bg-color);
+    padding: 50px;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+.project h2 {
+    color: var(--highlight-color);
+    margin-bottom: 20px;
+}
+
+.project .carousel-item {
+    text-align: center;
+}
+
+.card {
+    background-color: var(--highlight-color);
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.card h5 {
+    color: var(--text-color);
+}
+
+.card p {
+    color: var(--text-muted-color);
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    border: none;
+}
+
+footer {
+    background-color: var(--main-bg-color);
+    padding: 30px;
+}
+
+footer h5 {
+    color: var(--text-color);
+}
+
+footer p {
+    color: var(--text-muted-color);
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    display: inline-block;
+    margin: 10px;
+}
+
+footer ul li img {
+    width: 32px;
+    height: 32px;
+}
