@@ -1,3 +1,5 @@
+import logoImage from '/images/Logo-removebg-preview.png';
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -8,11 +10,11 @@ export default function Footer() {
           {/* About */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <span className="text-3xl">🍋</span>
+              <img src={logoImage} alt="Lemons Lanches" className="h-12 w-12 object-contain" />
               <h3 className="text-xl font-bold">Lemons Lanches</h3>
             </div>
             <p className="text-gray-400">
-              Os melhores lanches do bairro, feitos com amor e ingredientes de qualidade.
+              Os melhores lanches da região, feitos com amor e ingredientes de qualidade.
             </p>
           </div>
 
@@ -47,15 +49,7 @@ export default function Footer() {
           <div>
             <h4 className="font-bold text-lg mb-4">Redes Sociais</h4>
             <div className="flex gap-4">
-              <a
-                href="https://wa.me/5585999999999"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-green-500 hover:text-green-400 transition text-2xl"
-                title="WhatsApp"
-              >
-                💬
-              </a>
+
               <a
                 href="https://instagram.com"
                 target="_blank"

@@ -13,11 +13,14 @@ export default function Header() {
   return (
     <header className="fixed top-0 w-full bg-white shadow-lg z-50">
       <div className="container flex justify-between items-center py-4">
-        <div className="flex items-center gap-2">
-          <span className="text-3xl">🍋</span>
+        <button 
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="flex items-center gap-2 cursor-pointer hover:opacity-80 transition"
+        >
+          <img src="/images/Logo-removebg-preview.png" alt="Logo" className="h-12 w-auto" />
           <h1 className="text-2xl font-bold text-secondary">Lemons</h1>
           <span className="text-sm text-primary font-semibold">Lanches</span>
-        </div>
+        </button>
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex gap-8">
@@ -47,15 +50,7 @@ export default function Header() {
           </button>
         </nav>
 
-        {/* WhatsApp Button */}
-        <a
-          href="https://wa.me/5585999999999"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hidden md:flex items-center gap-2 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition font-semibold"
-        >
-          💬 Pedidos
-        </a>
+
 
         {/* Mobile Menu Button */}
         <button
@@ -94,14 +89,7 @@ export default function Header() {
             >
               Contato
             </button>
-            <a
-              href="https://wa.me/5585999999999"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition font-semibold text-center"
-            >
-              💬 Faça seu Pedido
-            </a>
+
           </div>
         </nav>
       )}

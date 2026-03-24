@@ -1,162 +1,114 @@
-import { useState } from 'react';
-import { ShoppingCart } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-interface MenuItem {
-  id: number;
-  name: string;
-  description: string;
-  price: number;
-  emoji: string;
-  category: 'burger' | 'hot-dog' | 'combo' | 'bebida' | 'sobremesa';
-}
-
-const menuItems: MenuItem[] = [
-  {
-    id: 1,
-    name: 'X-Burger Premium',
-    description: 'Carne, queijo, alface, tomate e molho especial',
-    price: 18.90,
-    emoji: '🍔',
-    category: 'burger',
-  },
-  {
-    id: 2,
-    name: 'X-Bacon Gourmet',
-    description: 'Carne, bacon crocante, queijo derretido e maionese caseira',
-    price: 22.90,
-    emoji: '🥓',
-    category: 'burger',
-  },
-  {
-    id: 3,
-    name: 'X-Duplo Completo',
-    description: 'Duas carnes, duplo de queijo, bacon e tudo mais',
-    price: 25.90,
-    emoji: '🍔',
-    category: 'burger',
-  },
-  {
-    id: 4,
-    name: 'Hot-Dog Clássico',
-    description: 'Salsicha, molho shoyu, maionese e cebola',
-    price: 12.90,
-    emoji: '🌭',
-    category: 'hot-dog',
-  },
-  {
-    id: 5,
-    name: 'Hot-Dog Bacon',
-    description: 'Salsicha, bacon, molho BBQ e cheddar',
-    price: 15.90,
-    emoji: '🌭',
-    category: 'hot-dog',
-  },
-  {
-    id: 6,
-    name: 'Combo Família',
-    description: '2x Burgers + 4x Hot-dogs + 2x Bebidas',
-    price: 89.90,
-    emoji: '🛍️',
-    category: 'combo',
-  },
-  {
-    id: 7,
-    name: 'Refrigerante 2L',
-    description: 'Vários sabores disponíveis',
-    price: 8.90,
-    emoji: '🥤',
-    category: 'bebida',
-  },
-  {
-    id: 8,
-    name: 'Milkshake Especial',
-    description: 'Chocolate, morango ou baunilha',
-    price: 12.00,
-    emoji: '🥛',
-    category: 'bebida',
-  },
-  {
-    id: 9,
-    name: 'Pudim Caseiro',
-    description: 'Feito em casa, derrete na boca',
-    price: 6.90,
-    emoji: '🍮',
-    category: 'sobremesa',
-  },
+const carouselImages = [
+  '/images/menu/Pasteis.jpeg',
+  '/images/menu/Batata.jpeg',
+  '/images/menu/Tapiocas.jpeg',
+  '/images/menu/HotDog.jpeg',
+  '/images/menu/PaoLinguica.jpeg',
+  '/images/menu/ComboFrango.jpeg',
+  '/images/menu/AguaCoco.jpeg',
+  '/images/menu/ComboContraFile.jpeg',
+  '/images/menu/Promo.jpeg',
 ];
 
 export default function Menu() {
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
-  const categories = [
-    { id: 'all', label: 'Todos' },
-    { id: 'burger', label: 'Burgers' },
-    { id: 'hot-dog', label: 'Hot-Dogs' },
-    { id: 'combo', label: 'Combos' },
-    { id: 'bebida', label: 'Bebidas' },
-    { id: 'sobremesa', label: 'Sobremesas' },
-  ];
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [progress, setProgress] = useState(0);
 
-  const filteredItems =
-    selectedCategory === 'all'
-      ? menuItems
-      : menuItems.filter((item) => item.category === selectedCategory);
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % carouselImages.length);
+    setProgress(0);
+  };
 
-  const handleWhatsAppOrder = (item: MenuItem) => {
-    const message = `Oi! Gostaria de pedir: ${item.name} (${item.emoji}) - R$ ${item.price.toFixed(2)}`;
-    window.open(`https://wa.me/5585999999999?text=${encodeURIComponent(message)}`, '_blank');
+  // Auto-play carousel every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(nextSlide, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  // Progress bar animation
+  useEffect(() => {
+    const progressInterval = setInterval(() => {
+      setProgress((prev) => {
+        if (prev >= 100) return 0;
+        return prev + 2; // 2% per 100ms = 100% in 5 seconds
+      });
+    }, 100);
+    return () => clearInterval(progressInterval);
+  }, []);
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + carouselImages.length) % carouselImages.length);
   };
 
   return (
-    <section id="menu" className="py-20 bg-white">
+    <section id="menu" className="py-20 bg-gradient-to-br from-yellow-50 to-orange-50">
       <div className="container">
         <div className="text-center mb-12">
           <h2 className="text-5xl font-bold text-dark mb-4">
-            🍽️ Nosso <span className="text-secondary">Cardápio</span>
+            Nosso <span className="text-secondary">Cardápio</span>
           </h2>
-          <p className="text-xl text-gray-600">Escolha seus lanches favoritos!</p>
+          <p className="text-xl text-gray-600">Conheça nossos deliciosos lanches!</p>
         </div>
 
-        {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {categories.map((category) => (
-            <button
-              key={category.id}
-              onClick={() => setSelectedCategory(category.id)}
-              className={`px-6 py-2 rounded-full font-semibold transition ${
-                selectedCategory === category.id
-                  ? 'bg-secondary text-white'
-                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-              }`}
-            >
-              {category.label}
-            </button>
-          ))}
-        </div>
+        {/* Carousel Container */}
+        <div className="relative max-w-6xl mx-auto">
+          {/* Main Image */}
+          <div className="relative w-full h-[600px] bg-gradient-to-b from-yellow-100 to-orange-100 rounded-lg overflow-hidden shadow-2xl flex items-center justify-center">
+            <img
+              src={carouselImages[currentIndex]}
+              alt="Carousel slide"
+              className="max-w-full max-h-full object-contain transition-opacity duration-500"
+            />
+          </div>
 
-        {/* Menu Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredItems.map((item) => (
+          {/* Navigation Buttons */}
+          <button
+            onClick={prevSlide}
+            className="absolute left-4 top-1/2 -translate-y-1/2 bg-secondary hover:bg-orange-600 text-white p-3 rounded-full shadow-lg transition z-10"
+            aria-label="Previous slide"
+          >
+            <ChevronLeft size={28} />
+          </button>
+
+          <button
+            onClick={nextSlide}
+            className="absolute right-4 top-1/2 -translate-y-1/2 bg-secondary hover:bg-orange-600 text-white p-3 rounded-full shadow-lg transition z-10"
+            aria-label="Next slide"
+          >
+            <ChevronRight size={28} />
+          </button>
+
+          {/* Progress Bar */}
+          <div className="w-full h-1 bg-gray-300 rounded-full overflow-hidden mt-2">
             <div
-              key={item.id}
-              className="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-2 p-6"
-            >
-              <div className="text-5xl mb-3">{item.emoji}</div>
-              <h3 className="text-2xl font-bold text-dark mb-2">{item.name}</h3>
-              <p className="text-gray-600 mb-4">{item.description}</p>
-              <div className="flex justify-between items-center">
-                <span className="text-3xl font-bold text-secondary">
-                  R$ {item.price.toFixed(2)}
-                </span>
-                <button
-                  onClick={() => handleWhatsAppOrder(item)}
-                  className="bg-green-500 text-white p-3 rounded-full hover:bg-green-600 transition"
-                  title="Pedir no WhatsApp"
-                >
-                  <ShoppingCart size={20} />
-                </button>
-              </div>
-            </div>
-          ))}
+              className="h-full bg-secondary transition-all duration-100"
+              style={{ width: `${progress}%` }}
+            ></div>
+          </div>
+
+          {/* Dots Navigation */}
+          <div className="flex justify-center gap-2 mt-6">
+            {carouselImages.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className={`h-3 rounded-full transition ${
+                  index === currentIndex
+                    ? 'bg-secondary w-8'
+                    : 'bg-gray-300 w-3 hover:bg-gray-400'
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+
+          {/* Slide Counter */}
+          <div className="text-center mt-4 text-gray-600 font-semibold">
+            {currentIndex + 1} / {carouselImages.length}
+          </div>
         </div>
       </div>
     </section>

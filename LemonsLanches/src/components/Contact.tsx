@@ -11,18 +11,18 @@ export default function Contact() {
           <p className="text-xl text-gray-600">Estamos sempre prontos para atender você!</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 gap-12">
           {/* Contact Info */}
           <div className="space-y-6">
             <div className="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-lg p-6 shadow-lg">
-              <div className="flex items-start gap-4">
-                <div className="text-3xl mt-1">📍</div>
+              <div className="flex flex-col items-center gap-4 text-center">
+                <div className="text-3xl">📍</div>
                 <div>
                   <h3 className="font-bold text-xl text-dark mb-2">Localização</h3>
-                  <p className="text-gray-700">Rua das Flores, 123</p>
-                  <p className="text-gray-700">Bairro Central - Fortaleza, CE</p>
+                  <p className="text-gray-700">Av. Franklin de Tolêdo Piza - Tenório (Praia Vermelha)</p>
+                  <p className="text-gray-700">Ubatuba - SP | CEP: 11680-000</p>
                   <a
-                    href="https://maps.google.com/?q=Rua+das+Flores,+123"
+                    href="https://maps.google.com/?q=Av.+Franklin+de+Tolêdo+Piza,+Tenório,+Ubatuba,+SP"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-secondary font-bold hover:underline mt-2 inline-block"
@@ -34,8 +34,8 @@ export default function Contact() {
             </div>
 
             <div className="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-lg p-6 shadow-lg">
-              <div className="flex items-start gap-4">
-                <div className="text-3xl mt-1">⏰</div>
+              <div className="flex flex-col items-center gap-4 text-center">
+                <div className="text-3xl">⏰</div>
                 <div>
                   <h3 className="font-bold text-xl text-dark mb-2">Horário de Funcionamento</h3>
                   <p className="text-gray-700"><strong>Segunda - Sexta:</strong> 11h - 23h</p>
@@ -46,18 +46,10 @@ export default function Contact() {
             </div>
 
             <div className="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-lg p-6 shadow-lg">
-              <div className="flex items-start gap-4">
-                <div className="text-3xl mt-1">📱</div>
+              <div className="flex flex-col items-center gap-4 text-center">
+                <div className="text-3xl">📱</div>
                 <div>
                   <h3 className="font-bold text-xl text-dark mb-2">Contato Direto</h3>
-                  <a
-                    href="https://wa.me/5585999999999"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-green-600 font-bold hover:underline block mb-2"
-                  >
-                    WhatsApp: (85) 99999-9999
-                  </a>
                   <a
                     href="tel:+558599999999"
                     className="text-secondary font-bold hover:underline"
@@ -69,59 +61,7 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Order Form */}
-          <div className="bg-gradient-to-br from-secondary to-orange-500 rounded-lg p-8 shadow-lg text-white">
-            <h3 className="text-3xl font-bold mb-6">Faça seu Pedido!</h3>
 
-            <form className="space-y-4">
-              <div>
-                <label className="block font-semibold mb-2">Nome</label>
-                <input
-                  type="text"
-                  placeholder="Seu nome completo"
-                  className="w-full px-4 py-2 rounded-lg text-dark focus:outline-none focus:ring-2 focus:ring-primary"
-                />
-              </div>
-
-              <div>
-                <label className="block font-semibold mb-2">Telefone</label>
-                <input
-                  type="tel"
-                  placeholder="(85) 99999-9999"
-                  className="w-full px-4 py-2 rounded-lg text-dark focus:outline-none focus:ring-2 focus:ring-primary"
-                />
-              </div>
-
-              <div>
-                <label className="block font-semibold mb-2">O que você quer pedir?</label>
-                <textarea
-                  rows={4}
-                  placeholder="Descreva seu pedido aqui..."
-                  className="w-full px-4 py-2 rounded-lg text-dark focus:outline-none focus:ring-2 focus:ring-primary resize-none"
-                ></textarea>
-              </div>
-
-              <button
-                type="submit"
-                className="w-full bg-white text-secondary font-bold py-3 rounded-lg hover:bg-gray-100 transition transform hover:scale-105"
-              >
-                Enviar Pedido 🚀
-              </button>
-
-              <p className="text-sm text-center mt-4 opacity-90">
-                Ou clique no botão abaixo para pedir direto no WhatsApp
-              </p>
-
-              <a
-                href="https://wa.me/5585999999999"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full bg-green-500 text-white font-bold py-3 rounded-lg hover:bg-green-600 transition text-center"
-              >
-                💬 Abrir WhatsApp
-              </a>
-            </form>
-          </div>
         </div>
 
         {/* Gallery Section */}

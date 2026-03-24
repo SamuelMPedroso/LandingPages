@@ -6,7 +6,7 @@ export default function Hero() {
     >
       <div className="container text-center">
         <div className="mb-8 animate-slideUp">
-          <span className="text-9xl animate-bounce">🍋</span>
+          <img src="/images/Logo-removebg-preview.png" alt="Logo Lemons Lanches" className="h-32 w-auto mx-auto" />
         </div>
 
         <h2 className="text-5xl md:text-7xl font-bold text-dark mb-4 animate-slideUp">
@@ -14,21 +14,13 @@ export default function Hero() {
         </h2>
 
         <p className="text-xl md:text-2xl text-gray-700 mb-8 max-w-2xl mx-auto animate-slideUp">
-          Os melhores lanches do bairro! Feitos com amor e ingredientes de qualidade.
+          Os melhores lanches da região! Feitos com amor e ingredientes de qualidade.
         </p>
 
         <div className="flex flex-col md:flex-row gap-4 justify-center mb-12 animate-slideUp">
           <a
-            href="https://wa.me/5585999999999"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-secondary text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-orange-600 transition transform hover:scale-105"
-          >
-            🛒 Faça seu Pedido no WhatsApp
-          </a>
-          <a
             href="#menu"
-            className="border-2 border-secondary text-secondary px-8 py-4 rounded-full text-lg font-bold hover:bg-secondary hover:text-white transition"
+            className="bg-secondary text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-orange-600 transition transform hover:scale-105"
           >
             📋 Ver Cardápio
           </a>
@@ -50,7 +42,7 @@ export default function Hero() {
           <div className="bg-white rounded-lg p-6 shadow-lg">
             <p className="text-4xl mb-2">💰</p>
             <h3 className="font-bold text-xl text-secondary mb-2">Preço Justo</h3>
-            <p className="text-gray-600">Melhor custo-benefício do bairro</p>
+            <p className="text-gray-600">Melhor custo-benefício da região</p>
           </div>
         </div>
       </div>
