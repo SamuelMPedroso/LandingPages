@@ -140,16 +140,13 @@ Instale Node.js em https://nodejs.org/
 npm run dev -- --port 3000
 ```
 
-### Problemas de WhatsApp
-Certifique-se de usar o número no formato internacional: `55XXXXXXXXXXX`
-
 ## 📝 Licença
 
-Este projeto é open-source e pode ser usado livremente.
+Este projeto é privado e não pode ser usado livremente.
 
 ## 👨‍💻 Desenvolvido por
 
-Desenvolvido por um desenvolvedor senior React para trazer os melhores lanches do bairro para o mundo digital! 🍋
+Desenvolvido por Samuel M. Pedroso! 🍋
 
 ---
 

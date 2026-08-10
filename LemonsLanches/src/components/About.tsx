@@ -4,9 +4,12 @@ export default function About() {
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-5xl font-bold text-dark mb-6">
-              Sobre a <span className="text-secondary">Lemons</span>
-            </h2>
+            <div className="flex items-center gap-6 mb-6">
+              <img src="/images/Logo-removebg-preview.png" alt="Logo Lemons" className="h-24" />
+              <h2 className="text-5xl font-bold text-dark">
+                Sobre a <span className="text-secondary">Lemons</span>
+              </h2>
+            </div>
             <p className="text-lg text-gray-700 mb-4">
               A Lemons Lanches nasceu com uma missão: trazer os melhores lanches feitos com amor e dedicação para o bairro.
             </p>
