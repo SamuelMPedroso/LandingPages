@@ -55,9 +55,6 @@ export default function About() {
                 <div className="text-center">
                   <p className="text-5xl font-bold text-secondary mb-2">+500</p>
                   <p className="text-xl text-gray-700 font-semibold">Clientes Satisfeitos</p>
-                  <hr className="my-4 border-yellow-300" />
-                  <p className="text-5xl font-bold text-primary mb-2">4.9★</p>
-                  <p className="text-xl text-gray-700 font-semibold">Avaliação Média</p>
                 </div>
               </div>
             </div>

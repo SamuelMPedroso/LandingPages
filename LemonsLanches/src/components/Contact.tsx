@@ -6,62 +6,21 @@ export default function Contact() {
       <div className="container">
         <div className="text-center mb-12">
           <h2 className="text-5xl font-bold text-dark mb-4">
-            Entre em <span className="text-secondary">Contato</span>
+            Venha nos <span className="text-secondary">conhecer</span>
           </h2>
           <p className="text-xl text-gray-600">Estamos sempre prontos para atender você!</p>
         </div>
 
-        <div className="grid grid-cols-1 gap-12">
-          {/* Contact Info */}
-          <div className="space-y-6">
-            <div className="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-lg p-6 shadow-lg">
-              <div className="flex flex-col items-center gap-4 text-center">
-                <div className="text-3xl">📍</div>
-                <div>
-                  <h3 className="font-bold text-xl text-dark mb-2">Localização</h3>
-                  <p className="text-gray-700">Av. Franklin de Tolêdo Piza - Tenório (Praia Vermelha)</p>
-                  <p className="text-gray-700">Ubatuba - SP | CEP: 11680-000</p>
-                  <a
-                    href="https://maps.google.com/?q=Av.+Franklin+de+Tolêdo+Piza,+Tenório,+Ubatuba,+SP"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-secondary font-bold hover:underline mt-2 inline-block"
-                  >
-                    Ver no Google Maps →
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-lg p-6 shadow-lg">
-              <div className="flex flex-col items-center gap-4 text-center">
-                <div className="text-3xl">⏰</div>
-                <div>
-                  <h3 className="font-bold text-xl text-dark mb-2">Horário de Funcionamento</h3>
-                  <p className="text-gray-700"><strong>Segunda - Sexta:</strong> 11h - 23h</p>
-                  <p className="text-gray-700"><strong>Sábado:</strong> 11h - 00h</p>
-                  <p className="text-gray-700"><strong>Domingo:</strong> 12h - 22h</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-lg p-6 shadow-lg">
-              <div className="flex flex-col items-center gap-4 text-center">
-                <div className="text-3xl">📱</div>
-                <div>
-                  <h3 className="font-bold text-xl text-dark mb-2">Contato Direto</h3>
-                  <a
-                    href="tel:+558599999999"
-                    className="text-secondary font-bold hover:underline"
-                  >
-                    Telefone: (85) 99999-9999
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
+        {/* Google Maps */}
+        <div className="mb-12 rounded-lg overflow-hidden shadow-lg">
+          <iframe
+            title="Localização Lemons Lanches"
+            width="100%"
+            height="400"
+            style={{ border: 0 }}
+            loading="lazy"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.9867819843367!2d-45.07500932346069!3d-23.412685167301937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94d9c7c5b8c5b8c5%3A0x5c5c5c5c5c5c5c5c!2sAv.%20Franklin%20de%20Tol%C3%AAdo%20Piza%20-%20Ten%C3%B3rio%2C%20Ubatuba%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1234567890"
+          ></iframe>
         </div>
 
         {/* Gallery Section */}
