@@ -1,4 +1,21 @@
+import { useState } from 'react';
+
 export default function About() {
+  const carouselImages = [
+    '/images/realIMG/dois-coquetéis-de-seltzer-duro-na-praia-verão-cocktails-rígido-bebidas-refrigeradas-bela-em-segundo-plano-conceito-barra-223651264.webp',
+    '/images/realIMG/Gemini_Generated_Image_p7em3ip7em3ip7em.png',
+    '/images/realIMG/Gemini_Generated_Image_xoupw0xoupw0xoup.png',
+  ];
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev === 0 ? carouselImages.length - 1 : prev - 1));
+  };
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev === carouselImages.length - 1 ? 0 : prev + 1));
+  };
+
   return (
     <section id="about" className="py-20 bg-gradient-to-r from-yellow-100 to-orange-100">
       <div className="container">
@@ -48,14 +65,42 @@ export default function About() {
           </div>
 
           <div className="flex justify-center">
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-yellow-300 to-orange-300 rounded-3xl blur-2xl opacity-50"></div>
-              <div className="relative bg-white rounded-3xl p-8 shadow-2xl">
-                <p className="text-6xl text-center mb-4">🍋🌟</p>
-                <div className="text-center">
-                  <p className="text-5xl font-bold text-secondary mb-2">+500</p>
-                  <p className="text-xl text-gray-700 font-semibold">Clientes Satisfeitos</p>
-                </div>
+            <div className="w-full max-w-3xl">
+              <h3 className="text-3xl font-bold text-center text-dark mb-6">
+                <span className="text-secondary">Galeria</span> de Fotos
+              </h3>
+              <div className="relative overflow-hidden rounded-3xl shadow-2xl aspect-[16/9] max-h-[28rem] bg-gray-100">
+                <img
+                  src={carouselImages[currentIndex]}
+                  alt={`Galeria ${currentIndex + 1}`}
+                  className="absolute inset-0 w-full h-full object-cover"
+                  loading="lazy"
+                />
+                <button
+                  type="button"
+                  onClick={prevSlide}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-3 shadow hover:bg-white"
+                >
+                  ‹
+                </button>
+                <button
+                  type="button"
+                  onClick={nextSlide}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-3 shadow hover:bg-white"
+                >
+                  ›
+                </button>
+              </div>
+              <div className="mt-4 flex justify-center gap-3">
+                {carouselImages.map((_, idx) => (
+                  <button
+                    key={idx}
+                    type="button"
+                    onClick={() => setCurrentIndex(idx)}
+                    className={`h-3 w-3 rounded-full ${idx === currentIndex ? 'bg-secondary' : 'bg-gray-300'}`}
+                    aria-label={`Slide ${idx + 1}`}
+                  />
+                ))}
               </div>
             </div>
           </div>

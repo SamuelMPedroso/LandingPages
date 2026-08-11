@@ -44,32 +44,6 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-
-          {/* Social Media */}
-          <div>
-            <h4 className="font-bold text-lg mb-4">Redes Sociais</h4>
-            <div className="flex gap-4">
-
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-pink-500 hover:text-pink-400 transition text-2xl"
-                title="Instagram"
-              >
-                📷
-              </a>
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-500 hover:text-blue-400 transition text-2xl"
-                title="Facebook"
-              >
-                👍
-              </a>
-            </div>
-          </div>
         </div>
 
         <hr className="border-gray-700 mb-8" />

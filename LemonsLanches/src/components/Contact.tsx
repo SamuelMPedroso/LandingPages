@@ -23,29 +23,6 @@ export default function Contact() {
           ></iframe>
         </div>
 
-        {/* Gallery Section */}
-        <div className="mt-16">
-          <h3 className="text-3xl font-bold text-center text-dark mb-8">
-            <span className="text-secondary">Galeria</span> de Fotos
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[
-              { image: '/images/Pastel.jpeg', title: 'Pastéis Crocantes' },
-              { image: '/images/Sanduiche.jpeg', title: 'Sanduíches Suculentos' },
-            ].map((item, idx) => (
-              <div
-                key={idx}
-                className="relative h-80 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition transform hover:-translate-y-2 group"
-              >
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );
