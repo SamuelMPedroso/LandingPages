@@ -28,24 +28,23 @@ export default function Contact() {
           <h3 className="text-3xl font-bold text-center text-dark mb-8">
             <span className="text-secondary">Galeria</span> de Fotos
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
-              { emoji: '🍔', title: 'Burgers Deliciosos' },
-              { emoji: '🌭', title: 'Hot-Dogs Especiais' },
-              { emoji: '🥤', title: 'Bebidas Geladas' },
+              { image: '/images/Pastel.jpeg', title: 'Pastéis Crocantes' },
+              { image: '/images/Sanduiche.jpeg', title: 'Sanduíches Suculentos' },
             ].map((item, idx) => (
               <div
                 key={idx}
-                className="bg-gradient-to-br from-yellow-100 to-orange-100 rounded-lg h-64 flex flex-col items-center justify-center shadow-lg hover:shadow-xl transition transform hover:-translate-y-2"
+                className="relative h-80 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition transform hover:-translate-y-2 group"
               >
-                <p className="text-8xl mb-4">{item.emoji}</p>
-                <p className="text-xl font-bold text-dark">{item.title}</p>
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
+                />
               </div>
             ))}
           </div>
-          <p className="text-center text-gray-600 mt-4 text-sm">
-            Fotos reais em breve! 📸
-          </p>
         </div>
       </div>
     </section>
