@@ -13,13 +13,20 @@ html {
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #fff9e6 0%, #ffe6cc 100%);
-  color: #1a1a1a;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  background-color: #FFFDF9;
+  color: #2A211C;
 }
 
-.container {
-  @apply max-w-6xl mx-auto px-4;
+@layer components {
+  .container {
+    @apply max-w-container mx-auto px-5 sm:px-6 lg:px-8;
+  }
+
+  /* Consistent focus ring across interactive elements for keyboard users */
+  .focus-ring {
+    @apply outline-none focus-visible:ring-2 focus-visible:ring-secondary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-surface;
+  }
 }
 
 /* Scrollbar customizado */
@@ -28,14 +35,26 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #f1ede6;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #FFD700;
+  background: #F5A623;
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #FF6B35;
+  background: #E85D2F;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+

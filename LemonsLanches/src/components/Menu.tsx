@@ -2,15 +2,15 @@ import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const carouselImages = [
-  '/images/menu/Pasteis.jpeg',
-  '/images/menu/Batata.jpeg',
-  '/images/menu/Tapiocas.jpeg',
-  '/images/menu/HotDog.jpeg',
-  '/images/menu/PaoLinguica.jpeg',
-  '/images/menu/ComboFrango.jpeg',
-  '/images/menu/AguaCoco.jpeg',
-  '/images/menu/ComboContraFile.jpeg',
-  '/images/menu/Promo.jpeg',
+  { src: '/images/menu/Pasteis.jpeg', alt: 'Pastéis crocantes recheados' },
+  { src: '/images/menu/Batata.jpeg', alt: 'Porção de batata frita' },
+  { src: '/images/menu/Tapiocas.jpeg', alt: 'Tapiocas recheadas' },
+  { src: '/images/menu/HotDog.jpeg', alt: 'Hot dog completo' },
+  { src: '/images/menu/PaoLinguica.jpeg', alt: 'Pão com linguiça' },
+  { src: '/images/menu/ComboFrango.jpeg', alt: 'Combo de frango' },
+  { src: '/images/menu/AguaCoco.jpeg', alt: 'Água de coco gelada' },
+  { src: '/images/menu/ComboContraFile.jpeg', alt: 'Combo contra filé' },
+  { src: '/images/menu/Promo.jpeg', alt: 'Promoção especial do dia' },
 ];
 
 export default function Menu() {
@@ -44,69 +44,72 @@ export default function Menu() {
   };
 
   return (
-    <section id="menu" className="py-20 bg-gradient-to-br from-yellow-50 to-orange-50">
+    <section id="menu" className="py-20 md:py-28 bg-white">
       <div className="container">
-        <div className="text-center mb-12">
-          <h2 className="text-5xl font-bold text-dark mb-4">
-            Nosso <span className="text-secondary">Cardápio</span>
+        <div className="text-center mb-12 md:mb-16">
+          <span className="inline-block text-secondary-600 font-bold text-sm tracking-wide uppercase mb-3">
+            Cardápio
+          </span>
+          <h2 className="text-3xl md:text-5xl font-extrabold text-dark tracking-tight mb-4">
+            Nosso <span className="text-secondary-600">Cardápio</span>
           </h2>
-          <p className="text-xl text-gray-600">Conheça nossos deliciosos lanches!</p>
+          <p className="text-lg text-ink-muted max-w-xl mx-auto">Conheça nossos deliciosos lanches!</p>
         </div>
 
         {/* Carousel Container */}
-        <div className="relative max-w-6xl mx-auto">
+        <div className="relative max-w-4xl mx-auto">
           {/* Main Image */}
-          <div className="relative w-full h-[600px] bg-gradient-to-b from-yellow-100 to-orange-100 rounded-lg overflow-hidden shadow-2xl flex items-center justify-center">
+          <div className="relative w-full aspect-[4/3] sm:aspect-[16/10] bg-primary-50 rounded-2xl overflow-hidden shadow-elevated flex items-center justify-center">
             <img
-              src={carouselImages[currentIndex]}
-              alt="Carousel slide"
-              className="max-w-full max-h-full object-contain transition-opacity duration-500"
+              src={carouselImages[currentIndex].src}
+              alt={carouselImages[currentIndex].alt}
+              className="w-full h-full object-cover transition-opacity duration-500"
             />
           </div>
 
           {/* Navigation Buttons */}
           <button
             onClick={prevSlide}
-            className="absolute left-4 top-1/2 -translate-y-1/2 bg-secondary hover:bg-orange-600 text-white p-3 rounded-full shadow-lg transition z-10"
-            aria-label="Previous slide"
+            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-secondary-600 p-2 sm:p-3 rounded-full shadow-card transition-colors z-10 focus-ring"
+            aria-label="Slide anterior"
           >
-            <ChevronLeft size={28} />
+            <ChevronLeft size={22} />
           </button>
 
           <button
             onClick={nextSlide}
-            className="absolute right-4 top-1/2 -translate-y-1/2 bg-secondary hover:bg-orange-600 text-white p-3 rounded-full shadow-lg transition z-10"
-            aria-label="Next slide"
+            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-secondary-600 p-2 sm:p-3 rounded-full shadow-card transition-colors z-10 focus-ring"
+            aria-label="Próximo slide"
           >
-            <ChevronRight size={28} />
+            <ChevronRight size={22} />
           </button>
 
           {/* Progress Bar */}
-          <div className="w-full h-1 bg-gray-300 rounded-full overflow-hidden mt-2">
+          <div className="w-full h-1 bg-primary-100 rounded-full overflow-hidden mt-3">
             <div
-              className="h-full bg-secondary transition-all duration-100"
+              className="h-full bg-secondary-600 transition-all duration-100"
               style={{ width: `${progress}%` }}
             ></div>
           </div>
 
           {/* Dots Navigation */}
-          <div className="flex justify-center gap-2 mt-6">
-            {carouselImages.map((_, index) => (
+          <div className="flex justify-center gap-2 mt-5">
+            {carouselImages.map((image, index) => (
               <button
-                key={index}
+                key={image.src}
                 onClick={() => setCurrentIndex(index)}
-                className={`h-3 rounded-full transition ${
+                className={`h-2.5 rounded-full transition-all focus-ring ${
                   index === currentIndex
-                    ? 'bg-secondary w-8'
-                    : 'bg-gray-300 w-3 hover:bg-gray-400'
+                    ? 'bg-secondary-600 w-7'
+                    : 'bg-primary-100 w-2.5 hover:bg-primary-200'
                 }`}
-                aria-label={`Go to slide ${index + 1}`}
+                aria-label={`Ir para o slide ${index + 1}`}
               />
             ))}
           </div>
 
           {/* Slide Counter */}
-          <div className="text-center mt-4 text-gray-600 font-semibold">
+          <div className="text-center mt-3 text-ink-muted text-sm font-semibold">
             {currentIndex + 1} / {carouselImages.length}
           </div>
         </div>
